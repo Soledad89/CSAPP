@@ -1,3 +1,4 @@
+#include "vector.h"
 /* addvec.c */
 /* $begin addvec */
 void addvec(int *x, int *y,
