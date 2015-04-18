@@ -9,4 +9,4 @@ csapp.o: csapp.c
 	gcc -c csapp.c
 
 clean:
-	rm shellex.o csapp.o
+	rm shellex.o csapp.o shellex
