@@ -101,7 +101,7 @@ pthread_cond_t qready=PTHREAD_COND_INITIALIZER;
 
 void* thread_func(void *arg)
 {
-    int param = (int) arg;
+    int param = * ((int *) arg);
     int i;
     
     for(i = 0; i < 10; i++)
@@ -127,7 +127,7 @@ int main()
     pthread_t tid[3];
     void *tret = NULL;
     for(i = 0; i < 3; i++)
-        pthread_create(&tid[i], NULL, thread_func, (void *) i);
+        pthread_create(&tid[i], NULL, thread_func, (void *) &i);
     for(i = 0; i < 3; i++)
         pthread_join(tid[i], &tret);
 
